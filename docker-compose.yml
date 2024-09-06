@@ -1,0 +1,13 @@
+services:
+  postgres:
+    container_name: go-db
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5433:5444"
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: go
