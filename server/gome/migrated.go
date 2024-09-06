@@ -10,7 +10,7 @@ import (
 
 
 func main() {
-    dsn := "host=localhost user=test dbname=paa port=xxxx sslmode=disable TimeZone=Asia/Shanghai"
+    dsn := "host=localhost user=test password=pass dbname=go port=5432 sslmode=disable TimeZone=Asia/Shanghai"
     db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
     if err != nil {
         panic("failed to connect database")
